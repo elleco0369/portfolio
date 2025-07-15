@@ -15,11 +15,13 @@
     <title>Portfolio</title>
 </head>
 <body>
-
+    
     <!-- NAVBAR -->
     <nav>
         <div class="left">
-            <a>elleco</a>
+            <div class="slidecontainer">
+                <input type="range" min="0" max="100" value="0" class="slider" id="dark-light-slider">
+            </div>
         </div>
 
 
@@ -39,9 +41,8 @@
         <!-- Section 1 - About Me -->
          <section class="hero-section">
             <div class="text">
-                <h2>Hi, I'm elleco.</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum fuga ratione corporis amet incidunt quae, corrupti veritatis itaque dolor placeat, hic atque repellendus ad nostrum labore enim! Dignissimos totam, ipsam quae laudantium vitae hic et, placeat commodi voluptates quo provident quidem. Ullam, recusandae.</p>
-            
+                <h2 id="hero-heading">Hi, I'm elleco.</h2>
+                <p id="hero-text">Welcome to my portfolio site.</p>            
 
                 <div class="links">
                     <a href="#skills">
@@ -59,7 +60,7 @@
 
          <!-- Section 2 - Skills -->
          <section id="skills" class="skills-section">
-            <h2>Skills</h2>
+            <h2 id="skills-heading">Skills</h2>
             <div class="text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse placeat iste ipsa rerum dolorum qui dolores tenetur voluptatem autem, provident, consequatur ullam eius doloremque, dolor laboriosam voluptates animi. Veritatis soluta accusamus praesentium eveniet illum.
             </div>
@@ -89,12 +90,12 @@
 
          <!-- Section 3 - Contact -->
          <section id="contact" class="contact-section">
-            <h2>Contact</h2>
+            <h2 id="contact-heading">Contact</h2>
 
             <div class="group">
-                <div class="text">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo at corrupti repellendus blanditiis sapiente quaerat consectetur impedit veniam ab quo totam, optio distinctio, ipsam quidem deserunt similique doloremque vero eligendi exercitationem fugiat tempore? Optio neque obcaecati est aliquid debitis cumque explicabo culpa, autem minima consequuntur enim officiis delectus dignissimos. Consequuntur?
-                </div>
+                <div id="contact-text" class="text">
+                    Feel free to get in touch!
+                  </div>
                 <form>
                     <label for="name">Name</label>
                     <input type="text" id="name">
@@ -112,5 +113,6 @@
             </div>
          </section>
     </main>
+    <script src="function.js"></script>
 </body>
 </html>

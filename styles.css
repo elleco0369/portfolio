@@ -1,10 +1,59 @@
 :root {
-    --text-color: #1a1c28;
-    --link-color: #4a76ee;
-    --background-color:  #373737;
-    --button-color: #2d2d2d;
-    --border-color: #32393d;
+    --text-color: #FFFF;
+    --link-color: #83a0f0;
+
+    --surface-a0: #121212;
+    --surface-a1: #282828;
+    --surface-a2: #3f3f3f;
+    --surface-a3: #575757;
+    --surface-a4: #717171;
+    --surface-a5: #8b8b8b;
+
+    --primary-a0: #a664b7;
+    --primary-a1: #b075bf;
+    --primary-a2: #bb86c7;
+    --primary-a3: #c597cf;
+    --primary-a4: #cfa8d7;
+    --primary-a5: #d9b9df;
+
+    --tonal-a0: #1f1a20;
+    --tonal-a1: #342f35;
+    --tonal-a2: #4a454b;
+    --tonal-a3: #615d62;
+    --tonal-a4: #79767a;
+    --tonal-a5: #939093;
+
 }
+
+body.light-theme {
+    --text-color: #000;
+    --link-color: #007bff;
+  
+    --surface-a0: #ffffff;
+    --surface-a1: #f0f0f0;
+    --surface-a2: #e1e1e1;
+    --surface-a3: #d3d3d3;
+    --surface-a4: #c5c5c5;
+    --surface-a5: #b6b6b6;
+  
+    --primary-a0: #a765b8;
+    --primary-a1: #a369b2;
+    --primary-a2: #9f6cac;
+    --primary-a3: #9b6fa5;
+    --primary-a4: #97739f;
+    --primary-a5: #937599;
+  
+    --tonal-a0: #f7eff8;
+    --tonal-a1: #e9e2ea;
+    --tonal-a2: #dbd5dc;
+    --tonal-a3: #cec9ce;
+    --tonal-a4: #c0bcc1;
+    --tonal-a5: #b3b0b4;
+  }
+  
+  body.light-theme {
+    background: linear-gradient(var(--surface-a1), var(--tonal-a0));
+  }
 
 *{
     margin: 0;
@@ -18,7 +67,11 @@ html{
 
 body{
     font-family: 'Open-Sans', sans-serif;
-    background-color: var(--background-color);
+    background: linear-gradient(var(--surface-a1), var(--tonal-a0));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--text-color)
 }
 
 a {
@@ -35,11 +88,50 @@ nav{
     height: 80px;
 }
 
-nav .left a{
-    color: var(--text-color);
-    font-size: 22px;
-    font-weight: 600;
+nav .left .slider {
+    -webkit-appearance: none;  
+    appearance: none;
+    width: 60%; 
+    height: 35px; 
+    background: var(--surface-a2); 
+    border-radius: 40px;
+    outline: none;
+    opacity: 0.75; 
+    -webkit-transition: 0.2s; 
+    transition: opacity .2s;
+  }
+  
+  nav .left .slider:hover {
+    opacity: 1; 
+  }
+
+nav .left .slider::-webkit-slider-thumb {
+    background: var(--thumb-image) center/contain no-repeat;
 }
+  
+nav .left .slider::-moz-range-thumb {
+    background: var(--thumb-image) center/contain no-repeat;
+}
+
+nav .left .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--thumb-image) center/contain no-repeat;
+    border: none;
+    cursor: pointer;
+  }
+  
+  nav .left .slider::-moz-range-thumb {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--thumb-image) center/contain no-repeat;
+    border: none;
+    cursor: pointer;
+  }
 
 nav .right button{
     color: var(--text-color);
@@ -47,12 +139,15 @@ nav .right button{
     font-weight: 400;
     margin: 0 3px;
     height: fit-content;
-    background-color: var(--button-color);
-    border-color: var(--border-color);
+    background-color: var(--surface-a);
+    border-color: var(--surface-a3);
     border-radius: 5px;
     padding: 4px;
 }
 
+nav .right button:hover{
+    filter: brightness(0.7);
+}
 
 nav .right a span{
     margin-left: 5px;
@@ -123,11 +218,12 @@ nav .right a span{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
+    width: 150px;
     padding: 10px 20px;
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--surface-a4);
     border-radius: 5px;
     margin: 10px;
+    background-color: var(--surface-a1)
 }
 
 .skills-section .cells .cell img{
@@ -178,6 +274,8 @@ nav .right a span{
     margin-bottom: 50px;
     outline: none;
     resize: none;
+    border-radius: 5px;
+    color: var(--text-color);
 }
 
 .contact-section .group form label{
@@ -193,6 +291,7 @@ nav .right a span{
     height: 50px;
     cursor: pointer;
     transition: .1s;
+    border-radius: 5px;
 }
 
 .contact-section .group form button:hover{
