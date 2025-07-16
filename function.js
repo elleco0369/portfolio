@@ -101,22 +101,22 @@ document.querySelectorAll('nav .right button').forEach(button => {
 
 const translations = {
     en: {
-      heroHeading: "Hi, I'm elleco.",
-      heroText: "Welcome to my portfolio site.",
+      heroHeading: "Hi, I'm Bedirhan.",
+      occupation: "Welcome to my portfolio site.",
       skillsHeading: "Skills",
       contactHeading: "Contact",
       contactText: "Feel free to get in touch!"
     },
     tr: {
-      heroHeading: "Merhaba, ben elleco.",
-      heroText: "Portföy siteme hoş geldiniz.",
+      heroHeading: "Merhaba, ben Bedirhan.",
+      occupation: "Portföy siteme hoş geldiniz.",
       skillsHeading: "Yetenekler",
       contactHeading: "İletişim",
       contactText: "Benimle iletişime geçmekten çekinmeyin!"
     },
     jp: {
-      heroHeading: "こんにちは、ellecoです。",
-      heroText: "私のポートフォリオサイトへようこそ。",
+      heroHeading: "こんにちは、Bedirhanです。",
+      occupation: "私のポートフォリオサイトへようこそ。",
       skillsHeading: "スキル",
       contactHeading: "連絡先",
       contactText: "お気軽にご連絡ください！"
