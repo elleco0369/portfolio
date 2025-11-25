@@ -1,3 +1,4 @@
+
 const slider = document.getElementById('dark-light-slider');
 
 function updateThumb(value) {
@@ -72,17 +73,6 @@ document.querySelectorAll('nav .right button').forEach(button => {
       switchLanguage(lang);
     });
   });
-  
-  function switchLanguage(lang) {
-    const t = translations[lang];
-    if (!t) return;
-  
-    document.getElementById('hero-heading').textContent = t.heroHeading;
-    document.getElementById('hero-text').textContent = t.heroText;
-    document.getElementById('skills-heading').textContent = t.skillsHeading;
-    document.getElementById('contact-heading').textContent = t.contactHeading;
-    document.getElementById('contact-text').textContent = t.contactText;
-  }
 
 
   function switchLanguage(lang) {
@@ -90,7 +80,9 @@ document.querySelectorAll('nav .right button').forEach(button => {
     if (!t) return;
   
     document.getElementById('hero-heading').textContent = t.heroHeading;
-    document.getElementById('hero-text').textContent = t.heroText;
+    document.getElementById('about-me-title').textContent = t.aboutMeTitle;
+    document.getElementById('aboutme').textContent = t.aboutMe;
+    document.getElementById('hero-text').textContent = t.occupation;
     document.getElementById('skills-heading').textContent = t.skillsHeading;
     document.getElementById('contact-heading').textContent = t.contactHeading;
     document.getElementById('contact-text').textContent = t.contactText;
@@ -98,10 +90,15 @@ document.querySelectorAll('nav .right button').forEach(button => {
     localStorage.setItem('siteLanguage', lang);
   }
 
+  const saved = localStorage.getItem('siteLanguage');
+  if (saved) switchLanguage(saved);
 
-const translations = {
+
+  const translations = {
     en: {
       heroHeading: "Hi, I'm Bedirhan.",
+      aboutMeTitle: "About Me",
+      aboutMe: "Since I was around 14 year old I studied C#, Python, Java, JavaScript and similar languages and currently I am a 2nd year student at MEF University. In future I am planning to study more on cybersecurity field and get my master's license from Virginia Commonwealth University.",
       occupation: "Welcome to my portfolio site.",
       skillsHeading: "Skills",
       contactHeading: "Contact",
@@ -109,6 +106,8 @@ const translations = {
     },
     tr: {
       heroHeading: "Merhaba, ben Bedirhan.",
+      aboutMeTitle: "Hakkımda",
+      aboutMe: "Çocukluğumdan itibaren C#, Python, Java, JavaScript ve benzeri dillerde kendimi geliştirdim ve şu anda MEF Üniversitesinde 2. Sınıf öğrencisiyim. Gelecekte kendimi sibergüvenlik dalında daha fazla geliştirmek ve Virginia Commonwealth Üniversitesinden Master diploması almayı planlıyorum.",
       occupation: "Portföy siteme hoş geldiniz.",
       skillsHeading: "Yetenekler",
       contactHeading: "İletişim",
@@ -116,9 +115,11 @@ const translations = {
     },
     jp: {
       heroHeading: "こんにちは、Bedirhanです。",
+      aboutMeTitle: "私について",
+      aboutMe: "幼い頃からC#、Python、Java、JavaScriptなどの言語を学び、現在はMEF大学の2年生です。将来はサイバーセキュリティ分野をさらに学び、バージニア・コモンウェルス大学で修士号を取得したいと考えています。",
       occupation: "私のポートフォリオサイトへようこそ。",
       skillsHeading: "スキル",
       contactHeading: "連絡先",
       contactText: "お気軽にご連絡ください！"
     }
-  };
+};

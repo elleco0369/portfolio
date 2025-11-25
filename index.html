@@ -25,9 +25,10 @@
         </div>
 
         <div class="right">
-                <button> <img width="20" src="https://img.icons8.com/color/48/great-britain-circular.png" alt="great-britain-circular"/> EN</button>
-                <button> <img width="20" src="https://img.icons8.com/fluency/48/turkey-circular.png" alt="turkey-circular"/> TR </button>
-                <button> <img width="20" src="https://img.icons8.com/color/48/japan-circular.png" alt="japan-circular"/> JP </button>
+                <button data-lang="en"> <img width="20" src="https://img.icons8.com/color/48/great-britain-circular.png" alt="great-britain-circular"/> EN</button>
+                <button data-lang="tr"> <img width="20" src="https://img.icons8.com/fluency/48/turkey-circular.png" alt="turkey-circular"/> TR </button>
+                <button data-lang="jp"> <img width="20" src="https://img.icons8.com/color/48/japan-circular.png" alt="japan-circular"/> JP </button>
+
         </div>
         
     </nav>
@@ -39,7 +40,7 @@
         <div class="split">
             <section class="hero-section">
                 <div class="headshot">
-                    <img src="images/headshot.png" alt="heashot">
+                    <img src="images/headshot.jpeg" alt="headshot">
                 </div>
                 <div class="text">
                     <h2 id="hero-heading">Hi, I'm Bedirhan.</h2>
@@ -54,11 +55,11 @@
                 </div>
             </section>
 
-         <!-- About Me -->
-                <section id="about-me" class="about-me-section">
-                    <h2>About Me</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vel quod cum aut atque, dicta quaerat? Sit, similique sed voluptatibus quia quo atque tempora? Optio, labore.</p>
-                </section>
+        <!-- About Me -->
+        <section id="about-me" class="about-me-section">
+            <h2 id="about-me-title">About Me</h2>
+            <p id="aboutme">Since I was around 14 year old I studied C#, Python, Java, JavaScript and similar languages and currently I am a 2nd year student at MEF University. In future I am planning to study more on cybersecurity field and get my master's license from Virginia Commonwealth University.</p>
+        </section>
         </div>
             <!-- Section 3 - Skills -->
                 <section id="skills" class="skills-section">
@@ -68,6 +69,10 @@
                         <div class="cell">
                             <img src="images/html.webp" alt="html logo">
                             <span>HTML</span>
+                        </div>
+                        <div class="cell">
+                            <img src="images/C.png" alt="C logo">
+                            <span>C</span>
                         </div>
 
                         <div class="cell">
@@ -107,7 +112,6 @@
                     <h2> Projects</h2>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore aspernatur modi reprehenderit, doloremque, ipsam, quaerat nobis praesentium odio in quia sunt ut non doloribus. Omnis?</p>
                 </section>
-            </div>
 
          <!-- Section 3 - Contact -->
          <section id="contact" class="contact-section">
@@ -116,7 +120,7 @@
             <div class="group">
                 <div id="contact-text" class="text">
                     Feel free to get in touch!
-                  </div>
+                </div>
                 <form>
                     <label for="name">Name</label>
                     <input type="text" id="name">

@@ -160,6 +160,7 @@ nav .right a span{
     display: flex;
     gap: 70px;            
     align-items: flex-start;
+    flex-wrap: wrap;
 }
   
 .split .hero-section,
