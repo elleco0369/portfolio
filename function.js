@@ -80,8 +80,6 @@ slider.addEventListener('change', snapToNearest);
 slider.addEventListener('touchend', snapToNearest); 
 
 
-
-
 // Translations
 
 document.querySelectorAll('nav .right button').forEach(button => {
@@ -176,4 +174,3 @@ document.querySelectorAll('nav .right button').forEach(button => {
   // save selected language
   const saved = localStorage.getItem('siteLanguage');
   if (saved) switchLanguage(saved);
-
