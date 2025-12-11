@@ -79,6 +79,16 @@ a {
     text-decoration: none;
 }
 
+html, body {
+    background-color: --surface-a1;
+    overscroll-behavior: none;
+}
+
+.container {
+    border-radius: 20px;
+    background-color: var(--surface-a0);
+}
+
 /* Navbar */
 nav{
     display: flex;
@@ -144,6 +154,12 @@ nav .right button{
     border-color: var(--surface-a3);
     border-radius: 5px;
     padding: 4px;
+}
+
+nav .right button.active-lang {
+    background-color: var(--surface-a3);
+    border-color: var(--surface-a4);
+    filter: brightness(1);
 }
 
 nav .right button:hover{
@@ -264,6 +280,7 @@ nav .right a span{
     font-size: 18px;
 }
 
+
 /* Experience */
 
 
@@ -282,6 +299,7 @@ nav .right a span{
 .experience-section{
     padding: 50px 50px;
     text-align: center;
+    font-size: 20px;
 }
 
 .experience-section h2{
@@ -289,18 +307,72 @@ nav .right a span{
     font-size: 35px;
 }
 
+.experience-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
+}
 
-/* projects */
+.experience-line-left,
+.experience-line-right {
+    flex: 1;
+    height: 3px;
+    background-color: #555; 
+    border-radius: 10px;
+}
 
-.projects-section{
-    padding: 50px 50px;
+.experience-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent; 
+    border: 3px solid #555;
+    z-index: 2;
+}
+
+#projects {
     text-align: center;
+    margin-top: 40px;
+  }
+  
+  .project-entry {
+    margin: 25px auto;
+    width: 70%;
+  }
+  
+  .project-entry p {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .project-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-top: 10px;
 }
 
-.projects-section h2{
-    font-size: 35px;
+.line-left,
+.line-right {
+    flex: 1;
+    height: 3px;
+    background-color: #555; 
+    border-radius: 10px;
 }
 
+.project-dot {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: transparent; 
+    border: 3px solid #555;
+    z-index: 2;
+}
 /* contact */
 
 .contact-section {

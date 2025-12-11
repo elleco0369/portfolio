@@ -22,13 +22,32 @@ function updateThumb(value) {
   slider.style.setProperty('--thumb-image', `url('${emojiSvg}')`);
 }
 
+
+ // save selected theme
+
+const themeSaved = localStorage.getItem('siteTheme');
+
+if (themeSaved === 'light') {
+  slider.value = 100;
+  document.body.classList.add('light-theme');
+} else {
+  slider.value = 0;
+  document.body.classList.remove('light-theme');
+}
+
+updateThumb(slider.value);
+updateTrackFill(slider.value);
+
 function updateTheme(value) {
   if (value < 50) {
     document.body.classList.remove('light-theme');
+    localStorage.setItem('siteTheme', 'dark');
   } else {
     document.body.classList.add('light-theme');
+    localStorage.setItem('siteTheme', 'light');
   }
 }
+
 
 function updateTrackFill(value) {
   const percent = value;
@@ -63,17 +82,61 @@ slider.addEventListener('touchend', snapToNearest);
 
 
 
-
-
 // Translations
 
 document.querySelectorAll('nav .right button').forEach(button => {
     button.addEventListener('click', () => {
-      const lang = button.textContent.trim().toLowerCase();
+      const lang = button.dataset.lang;
       switchLanguage(lang);
     });
   });
 
+
+  // fix experience title and skills
+  const translations = {
+    en: {
+      heroHeading: "Hi, I'm Bedirhan.",
+      aboutMeTitle: "About Me",
+      aboutMe: "Since I was around 14 year old I studied C#, Python, Java, JavaScript and similar languages and currently I am a 2nd year student at MEF University. In future I am planning to study more on cybersecurity field and get my master's license from Virginia Commonwealth University.",
+      skillsHeading: "Skills",
+      experienceTitle: "Experience",
+      experienceText: "6 months of ECU Coding experience",
+      projectHeading: "Projects",
+      discord: "Discord bot written with JavaScript with simple commands for basic usage.",
+      mod: "A modification written with JavaScript for the game called Minecraft.",
+      customerChurn: "A Machine Learning project for calculating customer churn prediction written with Python.",
+      spotify: "An app for downloading mp3 files from playlist link (Spotify + YouTube).",
+      chattingApp: "A chatting application written with Go. (Soon)"
+    },
+    tr: {
+      heroHeading: "Merhaba, ben Bedirhan.",
+      aboutMeTitle: "Hakkımda",
+      aboutMe: "Çocukluğumdan itibaren C#, Python, Java, JavaScript ve benzeri dillerde kendimi geliştirdim ve şu anda MEF Üniversitesinde 2. Sınıf öğrencisiyim. Gelecekte kendimi sibergüvenlik dalında daha fazla geliştirmek ve Virginia Commonwealth Üniversitesinden Master diploması almayı planlıyorum.",
+      skillsHeading: "Yetenekler",
+      experienceTitle: "Deneyim",
+      experienceText: "6 ay ECU kodlama deneyimi",
+      projectHeading: "Projeler",
+      discord: "JavaScript ile yazılmış, basit komutlarla temel kullanım için tasarlanmış Discord botu.",
+      mod: "Minecraft adlı oyun için JavaScript ile yazılmış bir modifikasyon.",
+      customerChurn: "Python ile yazılmış, müşteri kaybı tahminini hesaplayan bir makine öğrenimi projesi.",
+      spotify: "Spotify ve YouTube gibi oynatma listesi bağlantılarından MP3 dosyaları indirmek için bir uygulama.",
+      chattingApp: "Go diliyle yazılmış bir sohbet uygulaması. (Yakında)"
+    },
+    jp: {
+      heroHeading: "こんにちは、Bedirhanです。",
+      aboutMeTitle: "私について",
+      aboutMe: "幼い頃からC#、Python、Java、JavaScriptなどの言語を学び、現在はMEF大学の2年生です。将来はサイバーセキュリティ分野をさらに学び、バージニア・コモンウェルス大学で修士号を取得したいと考えています。",
+      skillsHeading: "スキル",
+      experienceTitle: "経験",
+      experienceText: "ECUコーディング経験6ヶ月",
+      projectHeading: "プロジェクト",
+      discord: "基本的な使用方法のためのシンプルなコマンドを使用して JavaScript で記述された Discord ボット。",
+      mod: "Minecraftというゲーム用にJavaScriptで書かれた改造",
+      customerChurn: "Python で記述された、顧客離脱予測を計算する機械学習プロジェクト。",
+      spotify: "プレイリスト リンク (Spotify + YouTube) から mp3 ファイルをダウンロードするアプリ。",
+      chattingApp: "Go で書かれたチャット アプリケーション。(近日公開)"
+    }
+};
 
   function switchLanguage(lang) {
     const t = translations[lang];
@@ -81,48 +144,36 @@ document.querySelectorAll('nav .right button').forEach(button => {
   
     document.getElementById('hero-heading').textContent = t.heroHeading;
     document.getElementById('about-me-title').textContent = t.aboutMeTitle;
-    document.getElementById('aboutme').textContent = t.aboutMe;
-    document.getElementById('hero-text').textContent = t.occupation;
+    document.getElementById('about-me-text').textContent = t.aboutMe;
     document.getElementById('skills-heading').textContent = t.skillsHeading;
-    document.getElementById('experience-title').experience = t.experienceTitle;
-    document.getElementById('contact-heading').textContent = t.contactHeading;
-    document.getElementById('contact-text').textContent = t.contactText;
+    document.getElementById('experience-heading').textContent = t.experienceTitle;
+    document.getElementById('experience-text').textContent = t.experienceText;
+    document.getElementById('project-heading').textContent = t.projectHeading;
+    document.getElementById('discord').textContent = t.discord;
+    document.getElementById('mod').textContent = t.mod;
+    document.getElementById('customer-churn').textContent = t.customerChurn;
+    document.getElementById('spotify').textContent = t.spotify;
+    document.getElementById('chatting-app').textContent = t.chattingApp;
+
     localStorage.setItem('siteLanguage', lang);
   }
 
+  document.querySelectorAll('nav .right button').forEach(button => {
+    button.addEventListener('click', () => {
+      const lang = button.dataset.lang;
+  
+      // remove active class from all
+      document.querySelectorAll('nav .right button')
+        .forEach(b => b.classList.remove('active-lang'));
+  
+      // add to the clicked one
+      button.classList.add('active-lang');
+  
+      switchLanguage(lang);
+    });
+  });
+
+  // save selected language
   const saved = localStorage.getItem('siteLanguage');
   if (saved) switchLanguage(saved);
 
-// fix experience title and skills
-  const translations = {
-    en: {
-      heroHeading: "Hi, I'm Bedirhan.",
-      aboutMeTitle: "About Me",
-      aboutMe: "Since I was around 14 year old I studied C#, Python, Java, JavaScript and similar languages and currently I am a 2nd year student at MEF University. In future I am planning to study more on cybersecurity field and get my master's license from Virginia Commonwealth University.",
-      occupation: "Welcome to my portfolio site.",
-      skillsHeading: "Skills",
-      experienceTitle: "Experience",
-      contactHeading: "Contact",
-      contactText: "Feel free to get in touch!"
-    },
-    tr: {
-      heroHeading: "Merhaba, ben Bedirhan.",
-      aboutMeTitle: "Hakkımda",
-      aboutMe: "Çocukluğumdan itibaren C#, Python, Java, JavaScript ve benzeri dillerde kendimi geliştirdim ve şu anda MEF Üniversitesinde 2. Sınıf öğrencisiyim. Gelecekte kendimi sibergüvenlik dalında daha fazla geliştirmek ve Virginia Commonwealth Üniversitesinden Master diploması almayı planlıyorum.",
-      occupation: "Portföy siteme hoş geldiniz.",
-      skillsHeading: "Yetenekler",
-      experienceTitle: "Deneyim",
-      contactHeading: "İletişim",
-      contactText: "Benimle iletişime geçmekten çekinmeyin!"
-    },
-    jp: {
-      heroHeading: "こんにちは、Bedirhanです。",
-      aboutMeTitle: "私について",
-      aboutMe: "幼い頃からC#、Python、Java、JavaScriptなどの言語を学び、現在はMEF大学の2年生です。将来はサイバーセキュリティ分野をさらに学び、バージニア・コモンウェルス大学で修士号を取得したいと考えています。",
-      occupation: "私のポートフォリオサイトへようこそ。",
-      skillsHeading: "スキル",
-      experienceTitle: "Experience",
-      contactHeading: "連絡先",
-      contactText: "お気軽にご連絡ください！"
-    }
-};
