@@ -83,7 +83,10 @@ a {
 
 html, body {
     background-color: --surface-a1;
+    margin: 0;
+    padding: 0;
     overscroll-behavior: none;
+    overflow-x: hidden;
 }
 
 .container {
@@ -100,28 +103,28 @@ html, body {
 
 /* Navbar */
 nav{
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 50px;
-    height: 80px;
+    padding: 10px 2rem;
 }
 
+nav .left, .center, .right{
+    flex: 1;
+  display: flex; 
+}
+        
+
 nav .left{
-  display: flex;
-  align-items: center;
+    justify-content: flex-start;
 }
 
 nav .center {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
+    justify-content: center;
 }
 
 nav .right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: flex-end;
 }
 
 nav .left .slider {
@@ -327,8 +330,10 @@ nav .right a span{
 /* skills */
 
 .skills-section{
-    padding: 50px 50px;
+    padding: 0 0;
     text-align: center;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
  .skills-section h2{
@@ -550,6 +555,10 @@ nav .right a span{
     text-align: left;
     flex: 1; 
 }
+
+
+/* Contact */
+
 
 
 
