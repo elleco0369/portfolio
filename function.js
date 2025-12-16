@@ -173,4 +173,6 @@ document.querySelectorAll('nav .right button').forEach(button => {
 
   // save selected language
   const saved = localStorage.getItem('siteLanguage');
-  if (saved) switchLanguage(saved);
+  if (saved) {
+    switchLanguage(saved);
+}

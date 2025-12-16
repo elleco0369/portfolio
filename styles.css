@@ -557,67 +557,6 @@ nav .right a span{
 }
 
 
-/* Contact */
-
-.split {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
-        position: relative;
-}
-
-.contact-infos {
-    flex: 1;
-}
-
-.send-mail {
-    flex: 1;
-}
-
-.contact-info p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-form input.email{
-    width:50%;
-}
-.contact-form input.name{
-    width:50%;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 0.8rem;
-    font-family: inherit;
-    font-size: 1rem;
-    border-radius: 20px;
-    background-color: var(--tonal-a2);
-    resize: none;
-}
-
-.contact-form button {
-    padding: 0.8rem;
-    cursor: pointer;
-    background-color: var(--tonal-a2);
-    border: none;
-    border-radius: 20px;
-    font-size: 1.1rem;
-    color: var(--text-color);
-    transition: background-color 0.3s ease;
-}
-
-
-
-
-/* fix slider on contact page */
-
 
 
 /* Responsiveness */
