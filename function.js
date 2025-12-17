@@ -104,7 +104,7 @@ document.querySelectorAll('nav .right button').forEach(button => {
       mod: "A modification written with JavaScript for the game called Minecraft.",
       customerChurn: "A Machine Learning project for calculating customer churn prediction written with Python.",
       spotify: "An app for downloading mp3 files from playlist link (Spotify + YouTube).",
-      chattingApp: "A chatting application written with Go. (Soon)"
+      chattingApp: "A chatting application written with Go. (Soon)",
     },
     tr: {
       heroHeading: "Merhaba, ben Bedirhan.",
@@ -118,7 +118,7 @@ document.querySelectorAll('nav .right button').forEach(button => {
       mod: "Minecraft adlı oyun için JavaScript ile yazılmış bir modifikasyon.",
       customerChurn: "Python ile yazılmış, müşteri kaybı tahminini hesaplayan bir makine öğrenimi projesi.",
       spotify: "Spotify ve YouTube gibi oynatma listesi bağlantılarından MP3 dosyaları indirmek için bir uygulama.",
-      chattingApp: "Go diliyle yazılmış bir sohbet uygulaması. (Yakında)"
+      chattingApp: "Go diliyle yazılmış bir sohbet uygulaması. (Yakında)",
     },
     jp: {
       heroHeading: "こんにちは、Bedirhanです。",
@@ -132,7 +132,7 @@ document.querySelectorAll('nav .right button').forEach(button => {
       mod: "Minecraftというゲーム用にJavaScriptで書かれた改造",
       customerChurn: "Python で記述された、顧客離脱予測を計算する機械学習プロジェクト。",
       spotify: "プレイリスト リンク (Spotify + YouTube) から mp3 ファイルをダウンロードするアプリ。",
-      chattingApp: "Go で書かれたチャット アプリケーション。(近日公開)"
+      chattingApp: "Go で書かれたチャット アプリケーション。(近日公開)",
     }
 };
 
@@ -152,6 +152,7 @@ document.querySelectorAll('nav .right button').forEach(button => {
     document.getElementById('customer-churn').textContent = t.customerChurn;
     document.getElementById('spotify').textContent = t.spotify;
     document.getElementById('chatting-app').textContent = t.chattingApp;
+
 
     localStorage.setItem('siteLanguage', lang);
   }
